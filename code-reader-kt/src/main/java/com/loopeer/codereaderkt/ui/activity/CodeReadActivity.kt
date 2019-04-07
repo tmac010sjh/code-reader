@@ -126,6 +126,7 @@ class CodeReadActivity : BaseActivity(), DirectoryNavDelegate.FileClickListener,
                 mFragment.openFile(node)
             }
         }
+
     }
 
     private fun createFragment(node: DirectoryNode) {
