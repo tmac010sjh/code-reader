@@ -20,20 +20,20 @@ android {
 
     }
 
-    signingConfigs {
-        release {
-            Properties properties = new Properties()
-            FileInputStream fis = new FileInputStream("$project.rootDir/keystore.properties")
-            properties.load(fis)
-            fis.close()
-
-            keyAlias = properties.key_alias
-            storeFile = file(properties.store_file)
-
-            storePassword = properties.store_password
-            keyPassword = properties.key_password
-        }
-    }
+//    signingConfigs {
+//        release {
+//            Properties properties = new Properties()
+//            FileInputStream fis = new FileInputStream("$project.rootDir/keystore.properties")
+//            properties.load(fis)
+//            fis.close()
+//
+//            keyAlias = properties.key_alias
+//            storeFile = file(properties.store_file)
+//
+//            storePassword = properties.store_password
+//            keyPassword = properties.key_password
+//        }
+//    }
     
     buildTypes {
         release {
@@ -78,6 +78,7 @@ dependencies {
     kapt 'com.android.databinding:compiler:3.0.0-beta2'
     provided 'com.google.auto.value:auto-value:' + auto_value
     provided 'com.jakewharton.auto.value:auto-value-annotations:1.2-update1'
+    compile "com.android.support:multidex:1.0.3"
 }
 repositories {
     mavenCentral()
